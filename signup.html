@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0" />
+    <title>Sign up</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  </head>
+  <body>
+    <nav>
+      <button class="back-btn" onclick="window.history.back()">
+        <i class="ri-arrow-left-line"></i> Back
+      </button>
+    </nav>
+
+    <div class="wrapper">
+      <div class="signup-form">
+        <h1>Sign up</h1>
+        <form action="/signin" method="POST">
+          <div class="form-group">
+            <p><label for="email">Email</label></p>
+            <input class="text-input" type="email" id="email" name="email" required />
+          </div>
+          <div class="form-group">
+            <p><label for="password">Password</label></p>
+            <div class="password-div">
+              <input class="text-input" type="password" id="password" name="password" required />
+              <i id="eye-password"class="ri-eye-off-line"></i>
+            </div>
+          </div>
+           <div class="form-group">
+            <p><label for="password">Confirm Password</label></p>
+            <div class="password-div">
+              <input class="text-input" type="password" id="confirm-password" name="confirm-password" required />
+              <i id="eye-confirm-password" class="ri-eye-off-line"></i>
+            </div>
+          </div>
+           <div class="captcha-container">
+                <div class="g-recaptcha" data-sitekey="6Ld9I9QpAAAAAOyDr3_AUoh4xhP7AHZny0W2ydCZ"></div>
+            </div>
+          <button class="sign-in" type="submit" class="btn">Sign up</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="/javascript/signup.js"></script>
+  </body>
+</html>

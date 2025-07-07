@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+:root {
+    --body-font-color: #FFFFFF;
+    --bg-color: #101015;
+    --bg-secondary: #18181C;
+    --bg-input: #202024;
+    --btn-color: #26BBFF;
+    --btn-hover-color: #60c9f9;
+}
+
