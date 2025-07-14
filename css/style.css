@@ -62,7 +62,8 @@ a {
     padding: 20px;
     border-radius: 16px;
     background-color: var(--bg-secondary);
-    border-color: rgba(255, 255, 255, 0.1);
+    border-color: rgba(8, 137, 6, 0.654);
+    box-shadow: rgba(2, 82, 1, 0.654) 0px 0px 15px 0px;
 }
 .signin-form h1{
     text-align: center;
@@ -130,6 +131,8 @@ p{
     padding: 20px;
     border-radius: 16px;
     background-color: var(--bg-secondary);
+    border-color: rgba(8, 137, 6, 0.654);
+    box-shadow: rgba(2, 82, 1, 0.654) 0px 0px 15px 0px;
 }
 .signup-form h1{
     text-align: center;
@@ -140,6 +143,8 @@ p{
     height: 20px;
     vertical-align: middle;
     margin-left: 10px;
+    border-color: rgba(8, 137, 6, 0.654);
+    box-shadow: rgba(2, 82, 1, 0.654) 0px 0px 15px 0px;
 }
 
 .sign-in:hover{
