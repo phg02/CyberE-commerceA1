@@ -151,3 +151,26 @@ p{
     background-color: var(--btn-hover-color);
     transition: background-color 0.3s ease;
 }
+
+.error-list{
+    color:red;
+    text-align: start;
+}
+
+.verify-form {
+    width: 40%;
+    height: 30%;
+    max-height: 350px;
+    max-width: 400px;
+    min-width: 300px;
+    min-height: 250px;
+    padding: 20px;
+    border-radius: 16px;
+    background-color: var(--bg-secondary);
+    border-color: rgba(8, 137, 6, 0.654);
+    box-shadow: rgba(2, 82, 1, 0.654) 0px 0px 15px 0px;
+}
+.verify-form h1{
+    text-align: center;
+    margin-bottom: 15px;
+}

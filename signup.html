@@ -10,6 +10,7 @@
     />
     <link rel="stylesheet" href="/css/style.css" />
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </head>
   <body>
     <nav>
@@ -21,22 +22,22 @@
     <div class="wrapper">
       <div class="signup-form">
         <h1>Sign up</h1>
-        <form action="/signin" method="POST">
+        <form action="/signin" method="POST" novalidate>
           <div class="form-group">
             <p><label for="email">Email</label></p>
-            <input class="text-input" type="email" id="email" name="email" required />
+            <input class="text-input" type="email" id="email" name="email"/>
           </div>
           <div class="form-group">
             <p><label for="password">Password</label></p>
             <div class="password-div">
-              <input class="text-input" type="password" id="password" name="password" required />
+              <input class="text-input" type="password" id="password" name="password"/>
               <i id="eye-password"class="ri-eye-off-line"></i>
             </div>
           </div>
            <div class="form-group">
             <p><label for="password">Confirm Password</label></p>
             <div class="password-div">
-              <input class="text-input" type="password" id="confirm-password" name="confirm-password" required />
+              <input class="text-input" type="password" id="confirm-password" name="confirm-password"/>
               <i id="eye-confirm-password" class="ri-eye-off-line"></i>
             </div>
           </div>
