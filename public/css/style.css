@@ -84,10 +84,18 @@ p{
     background-color: var(--bg-input);
     color: var(--body-font-color);
 }
-#password, #confirm-password{
+.password:is(:-webkit-autofill, :autofill) {
+     background-color: var(--bg-input) !important;
+    color: var(--body-font-color) !important;
+}
+.password{
+    margin-bottom: 15px;
+    padding: 10px;
+    border: none;
     width: 90%;
     background-color: var(--bg-input);
     height: 40px;
+    border-radius: 10px;
     color: var(--body-font-color);
 }
 
