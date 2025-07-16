@@ -9,7 +9,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css"
     />
     <link rel="stylesheet" href="/css/style.css" />
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="https://www.google.com/recaptcha/api.js?render=6LeiAIQrAAAAAPejbgawueU6XxUK_gVIAtA4Ptlr" async defer></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </head>
   <body>
@@ -22,7 +22,7 @@
     <div class="wrapper">
       <div class="signup-form">
         <h1>Sign up</h1>
-        <form action="/signup/captchav2" method="POST" novalidate>
+        <form method="POST" novalidate>
           <div class="form-group">
             <p><label for="email">Email</label></p>
             <input class="text-input" type="email" id="email" name="email"/>
@@ -41,14 +41,10 @@
               <i id="eye-confirm-password" class="ri-eye-off-line"></i>
             </div>
           </div>
-           <div class="captcha-container">
-                <div class="g-recaptcha" data-sitekey="6Ld9I9QpAAAAAOyDr3_AUoh4xhP7AHZny0W2ydCZ"></div>
-            </div>
           <button class="sign-in" type="submit" class="btn">Sign up</button>
         </form>
       </div>
     </div>
-
-    <script src="/javascript/signup.js"></script>
+    <script src="/javascript/signupv3.js"></script>
   </body>
 </html>

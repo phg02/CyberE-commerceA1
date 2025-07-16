@@ -31,7 +31,7 @@ eyebtn1.addEventListener("click", function () {
 
 
 const form = document.querySelector('form');
-
+console.log("working");
 form.addEventListener('submit', async (e) => {
     e.preventDefault();
     e.stopPropagation();
@@ -96,10 +96,6 @@ form.addEventListener('submit', async (e) => {
         error = true;
         errorList += '<li>Password not match</li>';
     }
-    if (grecaptcha.getResponse().length <= 0) {
-        error = true;
-        errorList += '<li>Please complete the captcha</li>';
-    }
 
 
     let errors = "<ul class='error-list'>" + errorList + "</ul>";
@@ -111,15 +107,18 @@ form.addEventListener('submit', async (e) => {
         });
         return
     }
+    console.log('Form submitted successfully');
     try {
-      const response = await fetch("/signup/captchav2", {
+      const token = await grecaptcha.execute('6LeiAIQrAAAAAPejbgawueU6XxUK_gVIAtA4Ptlr', { action: 'submit' });
+
+      const response = await fetch("/signup/captchav3", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           email: email.value.trim(),
           password: password.value,
           password_confirm: confirmPassword.value,
-          "g-recaptcha-response": grecaptcha.getResponse()
+          "g-recaptcha-response": token
         })
       });
 
@@ -147,5 +146,5 @@ form.addEventListener('submit', async (e) => {
         title: "Submission failed",
         text: "Something went wrong. Please try again."
       });
-    }
+    }  
 })

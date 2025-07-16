@@ -40,38 +40,12 @@ app.use(passport.session());
 app.use(flash());
 const User = require('./models/User');
 
-// const signupRoutes = require('./routes/signupRouter');
-app.get('/', (req, res) => {
-    res.render('signup');
-});
-app.post('/signup', async(req, res) => {
-    const { email, password } = req.body;
-    const dbemail = await User.findOne({email: req.body.email});
-    if(dbemail){
-            throw new Error('Email already exists');
-    }
-        //hashpassword
-    const hashPassword = await bcrypt.hash(password, 10);
-    try {
-        const user = new User({ email:email, password:hashPassword });
-        await user.save();
-        res.status(201).send('User created successfully');
-    } catch (err) {
-        res.send('Error: ' + err.message);
-    }
-});
+const signupRoutes = require('./routes/signupRouter');
+const signinRoutes = require('./routes/signinRouter');
 
-app.post('/signin', (req, res, next) => {
-    passport.authenticate('local', {
-        successRedirect: '/homepage',
-        failureRedirect: '/signin',
-        failureFlash: true,
-    })(req, res, next);
-}); 
+app.use('/signin', signinRoutes);
+app.use('/signup', signupRoutes);
 
-app.get('/signin', (req, res) => {
-    res.render('signin');
-});
 
 app.get('/homepage', (req, res) => {
     res.send('Welcome to the homepage!');
