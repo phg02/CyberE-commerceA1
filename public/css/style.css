@@ -146,6 +146,23 @@ p{
     text-align: center;
 }
 
+.signup-form-v3 {
+    width: 40%;
+    height: 70%;
+    max-height: 400px;
+    max-width: 400px;
+    min-width: 250px;
+    min-height: 300px;
+    padding: 20px;
+    border-radius: 16px;
+    background-color: var(--bg-secondary);
+    border-color: rgba(8, 137, 6, 0.654);
+    box-shadow: rgba(2, 82, 1, 0.654) 0px 0px 15px 0px;
+}
+.signup-form-v3 h1{
+    text-align: center;
+}
+
 .check-box{
     width: 20px;
     height: 20px;
@@ -181,4 +198,15 @@ p{
 .verify-form h1{
     text-align: center;
     margin-bottom: 15px;
+}
+
+input:autofill {
+  background-color: var(--bg-input) !important;
+  color: var(--body-font-color) !important;
+}
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px var(--bg-input) inset !important;
+  -webkit-text-fill-color: var(--body-font-color) !important;
+  transition: background-color 5000s ease-in-out 0s;
 }
