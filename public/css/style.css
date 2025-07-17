@@ -199,6 +199,23 @@ p{
     text-align: center;
     margin-bottom: 15px;
 }
+.secret-form {
+    width: 40%;
+    height: 25%;
+    max-height: 300px;
+    max-width: 400px;
+    min-width: 300px;
+    min-height: 100px;
+    padding: 20px;
+    border-radius: 16px;
+    background-color: var(--bg-secondary);
+    border-color: rgba(8, 137, 6, 0.654);
+    box-shadow: rgba(2, 82, 1, 0.654) 0px 0px 15px 0px;
+}
+.secret-form h2{
+    text-align: center;
+    margin-bottom: 15px;
+}
 
 input:autofill {
   background-color: var(--bg-input) !important;
