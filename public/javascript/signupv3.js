@@ -119,21 +119,18 @@ form.addEventListener("submit", async (e) => {
     const result = await response.text();
 
     if (response.ok) {
+      const vefifyResponse = await fetch("/verification/verify-email-otp", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: email.value.trim() }),
+      });
+
+      const verifyResult = await vefifyResponse.text();
       Swal.fire({
         icon: "success",
         title: "Success",
         text: result,
-      }).then(async () => {
-        const vefifyResponse = await fetch("/verification/verify-email-otp", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ email: email.value.trim() }),
-        });
-
-        // if (!vefifyResponse.ok) {
-        //   throw new Error('Failed to send verification code');
-        // }
-        const verifyResult = await vefifyResponse.text();
+      }).then(() => {
         Swal.fire({
           icon: "info",
           title: "Verification Code Sent",
