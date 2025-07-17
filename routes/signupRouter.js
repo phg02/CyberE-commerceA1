@@ -42,7 +42,7 @@ router.post('/captchav2', async(req, res) => {
     try {
         const user = new User({ email:email, password:hashPassword });
         await user.save();
-        res.status(201).send('User created successfully');
+        res.status(201).send('User created successfully, sending OTP to email');
     } catch (err) {
         res.send('Error: ' + err.message);
     }
@@ -79,7 +79,7 @@ router.post('/captchav3', async (req, res) => {
     try {
         const user = new User({ email:email, password:hashPassword });
         await user.save();
-        res.status(201).send('User created successfully');
+        res.status(201).send('User created successfully, sending OTP to email');
     } catch (err) {
         res.send('Error: ' + err.message);
     }

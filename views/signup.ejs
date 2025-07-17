@@ -22,10 +22,10 @@
     <div class="wrapper">
       <div class="signup-form">
         <h1>Sign up</h1>
-        <form action="/signup/captchav2" method="POST" novalidate>
+        <form action="/signup/captchav2" autocomplete="off" method="POST" novalidate>
           <div class="form-group">
             <p><label for="email">Email</label></p>
-            <input class="text-input" type="email" id="email" name="email"/>
+            <input class="text-input" autocomplete="nope" type="email" id="email" name="email"/>
           </div>
           <div class="form-group">
             <p><label for="password">Password</label></p>

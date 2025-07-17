@@ -8,6 +8,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css"
     />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="/css/style.css" />
   </head>
   <body>
@@ -20,9 +21,9 @@
     <div class="wrapper">
       <div class="verify-form">
         <h1>OTP verfication</h1>
-        <form action="/verify" method="POST">
+        <form action="/verifcation/verify" method="POST">
           <div class="form-group">
-            <p><label for="otp">OTP codes is sent to email</label></p>
+            <p><label for="otp">OTP codes is sent to <%= email%></label></p>
             <input class="text-input" type="text" id="otp" name="otp" required placeholder="Enter your OTP here"/>
           </div>
           <button class="sign-in" type="submit" class="btn">Verify</button>
@@ -30,6 +31,6 @@
       </div>
     </div>
 
-    <script src="/javascript/signin.js"></script>
+    <script src="/javascript/otp.js"></script>
   </body>
 </html>

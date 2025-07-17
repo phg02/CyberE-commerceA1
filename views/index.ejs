@@ -1,90 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Login Page</title>
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0" />
+    <title>Sign in</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+  
 
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #f0f2f5;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-
-    .login-container {
-      background: white;
-      padding: 40px 30px;
-      border-radius: 12px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-      width: 100%;
-      max-width: 400px;
-    }
-
-    .login-container h2 {
-      margin-bottom: 24px;
-      text-align: center;
-      color: #333;
-    }
-
-    .login-container input {
-      width: 100%;
-      padding: 12px;
-      margin: 10px 0 20px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-    }
-
-    .login-container button {
-      width: 100%;
-      padding: 12px;
-      background-color: #4CAF50;
-      color: white;
-      font-weight: bold;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-
-    .login-container button:hover {
-      background-color: #45a049;
-    }
-
-    .login-container .link {
-      margin-top: 12px;
-      text-align: center;
-    }
-
-    .login-container .link a {
-      color: #007bff;
-      text-decoration: none;
-    }
-
-    .login-container .link a:hover {
-      text-decoration: underline;
-    }
-  </style>
-</head>
-<body>
-  <div class="login-container">
-    <h2>Login</h2>
-    <form action="/login" method="POST">
-      <input type="email" name="email" placeholder="Email" required />
-      <input type="password" name="password" placeholder="Password" required />
-      <button type="submit">Login</button>
-      <div class="link">
-        <p>Don't have an account? <a href="/register">Register</a></p>
+    <div class="wrapper">
+      <div class="signin-form">
+        <h1>Phuong's Secure Website</h1>
+        <a href="/signin"><button class="btn sign-in">Sign in with secure Google 2FA</button></a>
+        <a href="/signup/captchav2"><button class="btn sign-in">Sign up page with Google reCAPTCHA v2 and email OTP</button></a>
+        <a href="/signup/captchav3"><button class="btn sign-in">Sign up page with Google reCAPTCHA v3 and email OTP</button></a>
       </div>
-    </form>
-  </div>
-</body>
+    </div>
+  </body>
 </html>
