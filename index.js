@@ -34,7 +34,7 @@ app.use(session({
     resave: false,
     saveUninitialized: true,
 }));
-app.use(passport.initialize());
+app.use(passport.initialize()); 
 app.use(passport.session());
 
 
@@ -54,7 +54,7 @@ app.use('/signin', signinRoutes);
 app.use('/signup', signupRoutes);
 app.use('/verification', verificationRoutes);
 
-app.get('/homepage', ensureAuthenticated,(req, res) => {
+app.get('/homepage', ensureAuthenticated, ensureVerified, (req, res) => {
     res.render('homepage', {
         user: req.user.email
     });

@@ -44,7 +44,7 @@ router.post('/captchav2', async(req, res) => {
         await user.save();
         res.status(201).send('User created successfully, sending OTP to email');
     } catch (err) {
-        res.send('Error: ' + err.message);
+        res.status(500).send('Error: ' + err.message);
     }
 });
 

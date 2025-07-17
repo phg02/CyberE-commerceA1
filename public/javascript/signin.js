@@ -24,7 +24,6 @@ document.addEventListener("DOMContentLoaded", function () {
     rememberCheckbox.checked = true;
   }
 
-  // On form submit, store or remove email
   const form = document.querySelector("form");
   form.addEventListener("submit", function () {
     if (rememberCheckbox.checked) {
@@ -32,5 +31,59 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
       localStorage.removeItem("rememberedEmail");
     }
+  });
+});
+
+
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  e.stopPropagation();
+
+  const email = document.querySelector("#email");
+  const password = document.querySelector("#password");
+
+  let error = false;
+  let errorList = "";
+
+  if (email.value === "" || email.value == null) {
+    error = true;
+    errorList += "<li>Email is required</li>";
+  }
+
+  if (password.value === "" || password.value == null) {
+    error = true;
+    errorList += "<li>Password is required</li>";
+  }
+
+  if (error) {
+    Swal.fire({
+      icon: "error",
+      title: "Error",
+      html: `<ul>${errorList}</ul>`,
+    });
+    return;
+  }
+
+  const response = await fetch("/signin", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ email: email.value.trim(), password: password.value.trim() }),
+  });
+  if (!response.ok) {
+    const errorText = await response.text();
+    Swal.fire({
+      icon: "error",
+      title: "Error",
+      text: errorText,
+    });
+    return;
+  }
+  const result = await response.text();
+  Swal.fire({
+    icon: "success",
+    title: "Success",
+    text: result,
+  }).then(() => {
+    window.location.href = "/homepage";
   });
 });
