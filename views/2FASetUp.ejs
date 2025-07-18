@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0" />
+    <title>Sign up</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </head>
+  <body>
+    <nav>
+      <button class="back-btn" onclick="window.history.back()">
+        <i class="ri-arrow-left-line"></i> Back
+      </button>
+    </nav>
+
+    <div class="wrapper">
+      <div class="signup-form">
+        <h1 class="banner">2-Step Verification</h1>
+        <div class="qr-code-container">
+          <p class="small-p">Scan the QR code below with your Google Authenticator app:</p>
+        <img src="<%=qrCodeUrl%>" class="qr" alt="Google Authenticator QR Code" class="qr-code" />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

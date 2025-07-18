@@ -54,12 +54,15 @@ app.use('/signin', signinRoutes);
 app.use('/signup', signupRoutes);
 app.use('/verification', verificationRoutes);
 
-app.get('/homepage', ensureAuthenticated, ensureVerified, (req, res) => {
+app.get('/homepage', ensureAuthenticated, ensureVerified, ensure2FA, (req, res) => {
     res.render('homepage', {
         user: req.user.email
     });
 });
 app.get('/logout', (req, res) => {
+    User.findOneAndUpdate(
+        { email: req.user.email },
+        { isAuthenticate: false });
     req.logout((err) => {
         if (err) {
             console.error('Logout error:', err);

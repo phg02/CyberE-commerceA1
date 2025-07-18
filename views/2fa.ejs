@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0" />
+    <title>Sign up</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </head>
+  <body>
+    <nav>
+      <button class="back-btn" onclick="window.history.back()">
+        <i class="ri-arrow-left-line"></i> Back
+      </button>
+    </nav>
+
+    <div class="wrapper">
+      <div class="twoFA-form">
+        <h1 class="banner">2-Step Verification</h1>
+        <form autocomplete="off" novalidate>
+          <div class="form-group">
+            <p><label for="twoFAcode">Enter Code from Google Authenticator</label></p>
+            <input class="text-input" autocomplete="off" type="text" id="twoFAcode" name="twoFAcode"/>
+          </div>
+          <button class="sign-in" type="submit" class="btn">Verify</button>
+        </form>
+        <div class="msg-container">
+        <a class="set-up-URL" href="/verification/2fa-setup">Haven't set up your Google Authenticator? Set up 2FA now</a>
+        </div>
+      </div>
+    </div>
+
+    <script src="/javascript/2fa.js"></script>
+  </body>
+</html>
