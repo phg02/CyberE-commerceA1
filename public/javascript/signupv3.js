@@ -101,7 +101,7 @@ form.addEventListener("submit", async (e) => {
   console.log("Form submitted successfully");
   try {
     const token = await grecaptcha.execute(
-      "6LeiAIQrAAAAAPejbgawueU6XxUK_gVIAtA4Ptlr",
+      "6LfRNYgrAAAAAJHAaJyaSNkcdWAmpFQlipk2XpDS",
       { action: "submit" }
     );
 

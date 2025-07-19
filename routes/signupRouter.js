@@ -20,7 +20,6 @@ router.post("/captchav2", async (req, res) => {
     response: response_key,
     remoteip: req.ip,
   });
-  console.log(params);
 
   const recaptchaResponse = await fetch(
     "https://www.google.com/recaptcha/api/siteverify",
