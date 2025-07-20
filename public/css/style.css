@@ -201,10 +201,10 @@ p{
 }
 .secret-form {
     width: 40%;
-    height: 25%;
+    height: 30%;
     max-height: 300px;
     max-width: 400px;
-    min-width: 300px;
+    min-width: 310px;
     min-height: 100px;
     padding: 20px;
     border-radius: 16px;
@@ -255,8 +255,25 @@ a.set-up-URL {
 
 .twoFA-form {
     width: 40%;
-    height: 40%;
-    max-height: 400px;
+    height: 35%;
+    max-height: 300px;
+    max-width: 400px;
+    min-width: 300px;
+    min-height: 200px;
+    padding: 20px;
+    border-radius: 16px;
+    background-color: var(--bg-secondary);
+    border-color: rgba(8, 137, 6, 0.654);
+    box-shadow: rgba(2, 82, 1, 0.654) 0px 0px 15px 0px;
+}
+.twoFA-form h1{
+    text-align: center;
+}
+
+.index-form {
+    width: 40%;
+    height: 60%;
+    max-height: 530px;
     max-width: 400px;
     min-width: 300px;
     min-height: 300px;
@@ -266,6 +283,6 @@ a.set-up-URL {
     border-color: rgba(8, 137, 6, 0.654);
     box-shadow: rgba(2, 82, 1, 0.654) 0px 0px 15px 0px;
 }
-.twoFA-form h1{
+.index-form h1{
     text-align: center;
 }

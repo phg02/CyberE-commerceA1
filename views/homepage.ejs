@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=<device-width>, initial-scale=1.0" />
-    <title>Verify OTP</title>
+    <title>Secret page</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css"
@@ -16,6 +16,7 @@
     <div class="wrapper">
       <div class="secret-form">
         <h2>Welcome to the secret page <%= user%></h2>
+        <a class="set-up-URL" href="/verification/2fa-setup">Haven't set up your Google Authenticator? Set up 2FA now</a>
         <a href="/logout"><button class="btn sign-in logout">Logout</button></a>
       </div>
     </div>

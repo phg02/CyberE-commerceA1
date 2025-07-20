@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0" />
+    <title>Sign in</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <nav>
+      <button class="back-btn" onclick="window.history.back()">
+        <i class="ri-arrow-left-line"></i> Back
+      </button>
+    </nav>
+
+    <div class="wrapper">
+      <div class="signin-form">
+        <h1>Sign In</h1>
+        <form method="POST">
+          <div class="form-group">
+            <p><label for="email">Email</label></p>
+            <input class="text-input" type="email" id="email" name="email" required />
+          </div>
+          <div class="form-group">
+            <p><label for="password">Password</label></p>
+            <div class="password-div">
+              <input class="password" type="password" id="password" name="password" required />
+              <i id="eye-password"class="ri-eye-off-line"></i>
+            </div>
+          </div>
+           <div class="form-group">
+            <label for="remember">Remember my email</label><input type="checkbox" name="remember" id="remember" class="check-box">
+          </div>
+          <button class="sign-in" type="submit" class="btn">Sign In</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="/javascript/signinOtp.js"></script>
+  </body>
+</html>

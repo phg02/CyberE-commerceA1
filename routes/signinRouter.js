@@ -19,5 +19,16 @@ router.get('/', (req, res) => {
     res.render('signin');
 });
 
+router.get('/otp', (req, res) => {
+    res.render('signinOtp');
+});
+
+router.post('/otp', (req, res, next) => {
+    passport.authenticate('local', {
+        successRedirect: '/verification/verify-signin-otp?email=' + req.body.email,
+        failureRedirect: '/signin',
+        failureFlash: true,
+    })(req, res, next);
+}); 
 
 module.exports = router;
