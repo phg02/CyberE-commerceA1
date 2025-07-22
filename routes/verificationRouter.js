@@ -154,7 +154,7 @@ router.post("/verify-signin-otp", async (req, res) => {
   user.otp = undefined;
   user.otpExpires = undefined;
   await user.save();
-  res.status(200).send("Email verified successfully");
+  res.status(200).send("OTP verified successfully");
 });
 
 router.get("/2fa", async (req, res) => {
@@ -169,7 +169,7 @@ router.get("/2fa-setup", async (req, res) => {
 
   const otpauthURL = speakeasy.otpauthURL({
     secret: user.secret,
-    label: `Phuong's Secure Web (${user.email})`,
+    label: user.email,
     issuer: "Phuong's Secure Web",  
     encoding: "base32",
   });

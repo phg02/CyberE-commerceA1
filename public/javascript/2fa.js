@@ -25,7 +25,6 @@ form.addEventListener("submit", async (e) => {
         title: "Error",
         text: result,
       });
-      window.location.href = "/verification/2fa";
     }
   } catch (err) {
     console.error("Submission error:", err);
