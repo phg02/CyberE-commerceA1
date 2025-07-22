@@ -8,7 +8,7 @@ form.addEventListener("submit", async (e) => {
     const verify2FA = await fetch("/verification/2fa", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ twoFACode: verificationCode }),
+      body: JSON.stringify({ twoFACode: verificationCode.trim() }),
     });
     const result = await verify2FA.text();
     if (verify2FA.ok) {

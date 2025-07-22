@@ -16,7 +16,7 @@ form.addEventListener("submit", async (e) => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ verificationCode:otp }),
+      body: JSON.stringify({ verificationCode:otp.trim() }),
     });
 
     const result = await response.text();
