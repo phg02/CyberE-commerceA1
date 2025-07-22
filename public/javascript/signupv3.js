@@ -119,26 +119,33 @@ form.addEventListener("submit", async (e) => {
     const result = await response.text();
 
     if (response.ok) {
-      const vefifyResponse = await fetch("/verification/verify-email-otp", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email: email.value.trim() }),
-      });
-
-      const verifyResult = await vefifyResponse.text();
       Swal.fire({
         icon: "success",
         title: "Success",
         text: result,
-      }).then(() => {
-        Swal.fire({
-          icon: "info",
-          title: "Verification Code Sent",
-          text: verifyResult,
-        }).then(() => {
-          window.location.href =
-            "/verification/verify-email-otp?email=" + email.value.trim();
+      }).then(async () => {
+        const verifyResponse = await fetch("/verification/verify-email-otp", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email: email.value.trim() }),
         });
+        const verifyResult = await verifyResponse.text();
+        if (verifyResponse.ok) {
+          Swal.fire({
+            icon: "info",
+            title: "Verification Code Sent",
+            text: verifyResult,
+          }).then(() => {
+            window.location.href =
+              "/verification/verify-email-otp?email=" + email.value.trim();
+          });
+        } else {
+          Swal.fire({
+            icon: "error",
+            title: "Error",
+            text: verifyResult,
+          });
+        }
       });
     } else {
       Swal.fire({
