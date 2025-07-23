@@ -1,4 +1,8 @@
-env var needed:
-PORT
-MONGO_URI
-SECRET
+environment variable needed:
+PORT = ?
+MONGO_URI = ?
+SESSION_SECRET = ?
+RECAPTCHA_SECRET_KEY = ?
+RECAPTCHA_SECRET_KEY_V3 = ?
+EMAIL_USER = ?
+EMAIL_PASS = ?
